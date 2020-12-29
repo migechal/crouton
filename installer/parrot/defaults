@@ -25,9 +25,9 @@ fi
 
 if [ -z "$MIRROR" ]; then
     if [ "$ARCH" = 'amd64' -o "$ARCH" = 'i386' ]; then
-        MIRROR="${CROUTON_MIRROR_ubuntu_x86:-http://archive.ubuntu.com/ubuntu/}"
+        MIRROR="${CROUTON_MIRROR_parrot_x86:-https://archive.parrotlinux.org/parrot/}"
     else
-        MIRROR="${CROUTON_MIRROR_ubuntu_arm:-http://ports.ubuntu.com/ubuntu-ports/}"
+        echo "Error: ARM not supported"
     fi
 fi
 

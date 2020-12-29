@@ -20,9 +20,9 @@ esac
 
 if [ -z "$MIRROR" ]; then
     if [ "$ARCH" = 'amd64' -o "$ARCH" = 'i386' ]; then
-        MIRROR="${CROUTON_MIRROR_parrot_x86:-https://archive.parrotlinux.org/parrot/}"
+        MIRROR="${CROUTON_MIRROR_ubuntu_x86:-http://archive.ubuntu.com/ubuntu/}"
     else
-        echo "Error: ARM not supported"
+        MIRROR="${CROUTON_MIRROR_ubuntu_arm:-http://ports.ubuntu.com/ubuntu-ports/}"
     fi
 fi
 
