@@ -72,7 +72,7 @@ if [ -n "$RELEASE" ]; then
     # There is no bootstrap script for some distros derived from Debian. Thus we use
     # the scripts for matching upstream distros to bootstrap the derived distros.
     if [ ! -f "$tmp/scripts/$RELEASE/$RELEASE" ]; then
-        ln -s "$tmp/scripts/$BOOTSTRAP_RELEASE" "$tmp/scripts/$RELEASE/$RELEASE"
+        ln -s "$tmp/scripts/$BOOTSTRAP_RELEASE" "$tmp/scripts/$RELEASE"
     fi
 
     # bionic/buster onwards does not require installing apt-transport-https (apt
