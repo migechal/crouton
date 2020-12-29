@@ -82,7 +82,7 @@ if [ -n "$RELEASE" ]; then
     #
     # TODO: Drop this when debootstrap handles this case properly
     if ! release -le artful -le stretch -le kali; then
-        ls "$tmp/scripts/$RELEASE/$RELEASE/"
+        ls --colors "$tmp/scripts/$RELEASE/$RELEASE/"
         sed -e 's/ apt-transport-https / /' -i "$tmp/scripts/$RELEASE/$RELEASE"
     fi
 
