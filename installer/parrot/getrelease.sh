@@ -1,1 +1,1 @@
-../ubuntu/getrelease.sh
+ubuntu/getrelease.sh
