@@ -71,8 +71,8 @@ fi
 if [ -n "$RELEASE" ]; then
     # There is no bootstrap script for some distros derived from Debian. Thus we use
     # the scripts for matching upstream distros to bootstrap the derived distros.
-    if [ ! -f "$tmp/scripts/$RELEASE" ]; then
-        ln -s "$tmp/scripts/$BOOTSTRAP_RELEASE" "$tmp/scripts/$RELEASE"
+    if [ ! -f "$tmp/scripts/$RELEASE/$RELEASE" ]; then
+        ln -s "$tmp/scripts/$BOOTSTRAP_RELEASE" "$tmp/scripts/$RELEASE/$RELEASE"
     fi
 
     # bionic/buster onwards does not require installing apt-transport-https (apt
@@ -82,8 +82,8 @@ if [ -n "$RELEASE" ]; then
     #
     # TODO: Drop this when debootstrap handles this case properly
     if ! release -le artful -le stretch -le kali; then
-        ls "$tmp/scripts/$RELEASE/"
-        sed -e 's/ apt-transport-https / /' -i "$tmp/scripts/$RELEASE"
+        cat "$tmp/scripts/$RELEASE/$RELEASE"
+        sed -e 's/ apt-transport-https / /' -i "$tmp/scripts/$RELEASE/$RELEASE"
     fi
 
     # Add the necessary debootstrap executables
